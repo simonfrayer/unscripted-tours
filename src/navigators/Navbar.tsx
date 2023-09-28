@@ -2,6 +2,7 @@ import React from "react";
 import { AppBar, IconButton, Toolbar, Typography, Container, Box, Menu, MenuItem, Button } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
+import LogoSvg from "../assets/Unscripted.svg";
 
 const pages = ['How does it work', 'Cooperation', 'About us'];
 
@@ -23,7 +24,7 @@ const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         <Toolbar disableGutters>
 
           {/* small screen (tablet -) */}
-        <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+        <img src={LogoSvg} width="60vw" height={"auto"} alt="Logo"/>
           <Typography
             variant="h5"
             noWrap
