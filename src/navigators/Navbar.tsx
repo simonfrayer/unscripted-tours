@@ -1,14 +1,14 @@
 import { AppBar, Toolbar, Container, Box, Button } from "@mui/material";
+import theme from "../utils/theme";
 
 const pages = ['How does it work', 'Cooperation', 'About us'];
 
 export const Navbar = () => {
     return (
-      <AppBar position='static'>
+      <AppBar position='static' sx={{color: theme.palette.primary.dark}}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-        {/* <img src={LogoSvg} width="60vw" height={"auto"} alt="Logo"/> */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, justifyContent: 'center' }}>
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
               {pages.map((page) => (
                 <Button
                   key={page}
