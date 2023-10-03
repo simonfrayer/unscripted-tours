@@ -11,18 +11,16 @@ interface ContainerProps {
 const Container: FC<ContainerProps> = ({title, backgroundColor, children, height}) => {
     return (
         <>
-            <Grid container spacing={1} sx={{backgroundColor: backgroundColor, width: "100%", height: height ? height : "400"}}>
+            <Grid container spacing={1} sx={{backgroundColor: backgroundColor, width: "100%", height: height ? height : "auto", padding: 5, margin: 0}}>
                 {title? 
                     <Grid item xs={12}>
-                        <Typography variant="h5" align="center">
+                        <Typography variant="h3" align="center" sx={{padding: 5}}>
                             {title}
                         </Typography>
                     </Grid>
                 : null}
 
-                <Grid item xs={12}>
-                    {children}
-                </Grid>
+                {children}
             </Grid>
         </>
     )
