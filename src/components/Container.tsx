@@ -5,12 +5,13 @@ interface ContainerProps {
     title? : string,
     backgroundColor? : string,
     children: ReactNode
+    height?: string,
 }
 
-const Container: FC<ContainerProps> = ({title, backgroundColor, children}) => {
+const Container: FC<ContainerProps> = ({title, backgroundColor, children, height}) => {
     return (
         <>
-            <Grid container spacing={1} sx={{backgroundColor: backgroundColor}}>
+            <Grid container spacing={1} sx={{backgroundColor: backgroundColor, width: "100%", height: height ? height : "400"}}>
                 {title? 
                     <Grid item xs={12}>
                         <Typography variant="h5" align="center">
