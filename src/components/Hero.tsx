@@ -6,7 +6,7 @@ const Hero = () => {
     return (
         <>
         <Grid container spacing={1}>
-        <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6}>
                 <DolinaApartment padding="25px"/>
             </Grid>
             <Grid item xs={12} md={6}>
