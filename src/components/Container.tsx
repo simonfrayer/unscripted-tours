@@ -24,7 +24,7 @@ const Container: FC<ContainerProps> = ({title, titlePosition, backgroundColor, b
                 }}>
                 {title? 
                     <Grid item xs={12} style={{display: "flex", justifyContent: titlePosition ? titlePosition : "center"}}>
-                        <Typography variant="h3" align="center" sx={{padding: 5}}>
+                        <Typography variant="h2" align="center" sx={{padding: 5}}>
                             {title}
                         </Typography>
                     </Grid>

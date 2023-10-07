@@ -1,6 +1,7 @@
 import Facts from "../containers/Facts";
 import Hero from "../containers/Hero"
 import VirtualTour from "../containers/VirtualTour";
+import Collaboration from "../containers/Collaboration";
 
 function Home() {
     return (
@@ -8,6 +9,7 @@ function Home() {
         <Hero/>
         <VirtualTour />
         <Facts />
+        <Collaboration />
     </>
         )
 }

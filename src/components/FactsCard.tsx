@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { FC } from "react";
 import theme from "../utils/theme";
 
@@ -17,6 +17,13 @@ const FactsCard : FC<FactsCardProps> = ({text, Icon}) => {
                 alignItems: "center",
                 padding: 4
                 }}>
+                    <Box
+                        sx={{
+                            boxShadow: 10,
+                        borderRadius: 10,
+
+                        }}
+                    >
                     <Grid item sx={{
                         backgroundColor: theme.palette.primary.dark,
                         padding: {xs: 5, md: 10},
@@ -33,6 +40,7 @@ const FactsCard : FC<FactsCardProps> = ({text, Icon}) => {
                     {text}
                 </Typography>
                 </Grid>
+                </Box>
             </Grid>
         </>
     )

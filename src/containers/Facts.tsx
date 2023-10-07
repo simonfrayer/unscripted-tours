@@ -9,7 +9,7 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 const Facts = () => {
     return (
         <>
-            <Container backgorundImage={ContainerBackgroundImage} title="What is a Virtual Tour Good For?">
+            <Container backgorundImage={ContainerBackgroundImage} title="Why Virtual Tour?" titlePosition="start">
                 <FactsCard 
                 text={"Transforming house hunting, 3D virtual tours offer a lifelike exploration of properties, allowing buyers to tour homes remotely before scheduling visits."} 
                 Icon={VillaOutlinedIcon} 

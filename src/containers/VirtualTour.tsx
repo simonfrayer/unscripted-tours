@@ -12,6 +12,7 @@ const VirtualTour = () => {
                     justifyContent: "center",
                     alignItemns: "center",
                     width: "100%",
+                    paddingTop: 5,
                 }}>
                     <DolinaApartment />
                 </Box>
