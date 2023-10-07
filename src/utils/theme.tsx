@@ -8,8 +8,19 @@ const theme = createTheme({
             dark: "#383838",
             contrastText: "#525266",
         },
-        
     },
+    components: {
+        // Name of the component
+        MuiButton: {
+          styleOverrides: {
+            // Name of the slot
+            root: {
+              // Some CSS
+              fontSize: '1rem',
+            },
+          },
+        },
+      },
 });
 
 export default theme;

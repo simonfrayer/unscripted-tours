@@ -1,3 +1,4 @@
+import Facts from "../containers/Facts";
 import Hero from "../containers/Hero"
 import VirtualTour from "../containers/VirtualTour";
 
@@ -6,6 +7,7 @@ function Home() {
     <>
         <Hero/>
         <VirtualTour />
+        <Facts />
     </>
         )
 }

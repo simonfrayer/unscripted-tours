@@ -5,13 +5,23 @@ interface ContainerProps {
     title? : string,
     titlePosition? : "center"  | "start" | "end",
     backgroundColor? : string,
+    backgorundImage? : string,
     children: ReactNode
 }
 
-const Container: FC<ContainerProps> = ({title, titlePosition, backgroundColor, children}) => {
+const Container: FC<ContainerProps> = ({title, titlePosition, backgroundColor, backgorundImage, children}) => {
     return (
         <>
-            <Grid container spacing={1} sx={{backgroundColor: backgroundColor, width: "100%", minHeight: "100vh", padding: 5, margin: 0}}>
+            <Grid container sx={{
+                backgroundColor: backgroundColor, 
+                width: "100%", 
+                minHeight: "100vh", 
+                padding: 5, 
+                margin: 0,
+                backgroundImage: backgorundImage ? `url(${backgorundImage})` : '',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                }}>
                 {title? 
                     <Grid item xs={12} style={{display: "flex", justifyContent: titlePosition ? titlePosition : "center"}}>
                         <Typography variant="h3" align="center" sx={{padding: 5}}>
