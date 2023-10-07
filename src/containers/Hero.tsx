@@ -45,6 +45,7 @@ const Hero = () => {
                     textAlign: 'center', 
                     color: theme.palette.primary.dark, 
                     width: '100%',
+                    textShadow: `2px 2px 5px ${theme.palette.primary.dark}`,
                     }}>
                     <b style={{width: "100%"}}>Immersive <br/>
                     3D Virtual Tours</b>
