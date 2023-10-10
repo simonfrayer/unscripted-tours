@@ -1,10 +1,14 @@
 import Container from "../components/Container";
 import ContainerBackgroundImage from "../assets/container-2.jpg";
 import BackgroundImage from "../assets/contact-form.jpeg";
-import { Box, Grid, Typography, FormControl, Input, InputLabel,FormHelperText } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import theme from "../utils/theme";
+import Form from "../components/Form";
 
 const Collaboration = () => {
+
+      
+
     return (
         <>
             <Container title="Collaboration" backgorundImage={ContainerBackgroundImage} titlePosition="start">
@@ -30,7 +34,7 @@ const Collaboration = () => {
                             Contact Us
                         </Typography>
                         <Box sx={{
-                            padding: 2, 
+                            padding: 5, 
                             width: "80%", 
                             height: "auto",
                             boxShadow: 3,
@@ -40,11 +44,7 @@ const Collaboration = () => {
                             alignItems: "center",
                             backgroundColor: theme.palette.primary.main,
                         }}>
-                            <FormControl>
-                                <InputLabel htmlFor="my-input">Email address</InputLabel>
-                                <Input id="my-input" aria-describedby="my-helper-text" />
-                                <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
-                            </FormControl>
+                            <Form />
                         </Box>
                     </Box>
                 </Grid>
