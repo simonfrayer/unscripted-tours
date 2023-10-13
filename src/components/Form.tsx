@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Grid, TextField, Button } from "@mui/material";
 import theme from "../utils/theme";
+import emailjs from '@emailjs/browser';
 
 const Form = () => {
   const validationSchema = yup.object({
@@ -21,12 +22,24 @@ const Form = () => {
       },
       validationSchema: validationSchema,
       onSubmit: (values) => {
+        sendEmail(values);
+
         alert(JSON.stringify(values, null, 2));
       },
     });
 
+    const sendEmail = async (e : any) => {
+      e.preventDefault();
+
+      await emailjs.send('service_purmlat', 'template_x7jez5d', formik.values , 'OTY2l7yLpD49mFSjF').then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+    }
+
     return (
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={sendEmail}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <TextField
