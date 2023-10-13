@@ -2,6 +2,7 @@ import Facts from "../containers/Facts";
 import Hero from "../containers/Hero"
 import VirtualTour from "../containers/VirtualTour";
 import Collaboration from "../containers/Collaboration";
+import Footer from "../navigators/Footer";
 
 function Home() {
     return (
@@ -10,6 +11,7 @@ function Home() {
         <VirtualTour />
         <Facts />
         <Collaboration />
+        <Footer />
     </>
         )
 }
