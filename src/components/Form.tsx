@@ -3,8 +3,23 @@ import * as yup from 'yup';
 import { Grid, TextField, Button } from "@mui/material";
 import theme from "../utils/theme";
 import emailjs from '@emailjs/browser';
+import { Alert } from '@mui/material';
+import { useState } from 'react';
+import { Snackbar } from '@mui/material';
 
 const Form = () => {
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openError, setOpenError] = useState(false);
+
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenSuccess(false);
+    setOpenError(false);
+  };
+
   const validationSchema = yup.object({
     // Define your validation schema here
     firstName: yup.string().required('First Name is required'),
@@ -22,23 +37,22 @@ const Form = () => {
       },
       validationSchema: validationSchema,
       onSubmit: (values) => {
-        sendEmail(values);
-
-        alert(JSON.stringify(values, null, 2));
       },
     });
 
-    const sendEmail = async (e : any) => {
+    const sendEmail = (e : any) => {
       e.preventDefault();
 
-      await emailjs.send('service_purmlat', 'template_x7jez5d', formik.values , 'OTY2l7yLpD49mFSjF').then((result) => {
-        console.log(result.text);
-    }, (error) => {
-        console.log(error.text);
+      emailjs.send('service_purmlat', 'template_x7jez5d', formik.values , 'OTY2l7yLpD49mFSjF').then(() => {
+        setOpenSuccess(true)
+    }, () => {
+        setOpenError(true)
     });
     }
 
     return (
+      <Grid container spacing={2} sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <Grid item xs={12}>
       <form onSubmit={sendEmail}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
@@ -108,6 +122,16 @@ const Form = () => {
           </Grid>
         </Grid>
       </form>
+          <Grid item xs={12}>
+            <Snackbar open={openSuccess} autoHideDuration={5000} onClose={handleClose}>
+              <Alert severity={"success"} variant="outlined"> Successfully sent </Alert>
+            </Snackbar>
+            <Snackbar open={openError} autoHideDuration={6000} onClose={handleClose}>
+              <Alert severity={"error"} variant="outlined"> Could not send the form. Please write us an email instead on the following address: unsciptedtours@gmial.com </Alert>
+            </Snackbar>
+      </Grid>
+      </Grid>
+      </Grid>
     );
   };
 
