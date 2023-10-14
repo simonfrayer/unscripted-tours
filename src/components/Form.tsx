@@ -12,12 +12,17 @@ const Form = () => {
   const [openError, setOpenError] = useState(false);
 
   const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
-      return;
+    try{
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpenSuccess(false);
+      setOpenError(false);
     }
-
-    setOpenSuccess(false);
-    setOpenError(false);
+    catch(err){
+      console.log(err, event);
+    }
   };
 
   const validationSchema = yup.object({
@@ -36,7 +41,7 @@ const Form = () => {
         comment: '',
       },
       validationSchema: validationSchema,
-      onSubmit: (values) => {
+      onSubmit: () => {
       },
     });
 
