@@ -36,6 +36,9 @@ const Footer = () => {
                             Simon Mayer
                         </FooterLink>
                         <br />
+                        <FooterLink href="https://simon-frayer.com/" target="_blank">
+                            simon-frayer.com
+                        </FooterLink>
                     </Typography>
                 </Grid>
             </Grid>
